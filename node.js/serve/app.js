@@ -1,5 +1,5 @@
 const express=require('express')
-// post传参数用bodyparser
+// post传参数用bodyparser   https://www.npmjs.com/package/body-parser
 const bodyParser = require('body-parser')
 const app=new express()
 
