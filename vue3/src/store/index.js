@@ -8,7 +8,9 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state:{
         //存放的键值对就是所要管理的状态
-        name:'helloVueX'
+        name:'helloVueX',
+        // 自定义指令
+        selfValue:'',
     }
 })
 

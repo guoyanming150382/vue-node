@@ -37,7 +37,7 @@ app.get('/index',function(req,res){
 			]
 		}
 	]
-	res.json({code:200,msg:'success',data:data});
+	res.json({code:200,msg:'success',data:data,token:"mobiwusizhiafh//asrfasf"});
 })
 
 // get 传参数

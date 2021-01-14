@@ -14,6 +14,7 @@ service.interceptors.request.use(
     config.headers['Accept'] = 'application/json'
     config.headers['Request-From'] = 'mobile'
     let token = sessionStorage.getItem('loginToken') || null
+    console.log("token女女女女")
     if (token) {
       // 如果token不为null，否则传token给后台
       config.headers['Token'] = token

@@ -34,6 +34,7 @@ export default {
     position: fixed;
     bottom: 0;
     width: 100%;
+    border-top: 3px solid #333;
     li {
       display: inline-block;
       width: 33.33%;

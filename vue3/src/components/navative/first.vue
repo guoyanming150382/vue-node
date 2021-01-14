@@ -24,6 +24,7 @@ export default {
             // 封装后的axios
             updatseBook.updateBook().then((res)=>{
                 console.log("封装",res)
+                sessionStorage.loginToken=res.token
             })
 
             updatseBook.sends({name:"奥术大师多"}).then((res)=>{
