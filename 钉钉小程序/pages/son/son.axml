@@ -1,0 +1,15 @@
+<view>
+  子页面/////////////
+  <button type="primary" onTap="tiao">
+  按钮
+  </button>
+  <button type="primary" onTap="weizhi1">
+  位置信息查看
+  </button>
+  <button type="primary" onTap="gets">
+  拿取数据
+  </button>
+  <button type="primary" onTap="remove">
+  按钮remove
+  </button>
+</view>

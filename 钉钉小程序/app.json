@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/son/son",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "titleBarColor":"#000",
+    "defaultTitle": "My App"
+  },
+   "tabBar": {
+    "textColor": "#aaa",
+    "selectedColor": "#ff000",
+    "backgroundColor": "#123456",
+    "items": [
+      {
+        "icon":"/images/icon/a1.png",
+        "activeIcon":"/images/icon/b1.png",
+        "pagePath": "pages/index/index",
+        "name_locale": {
+            "zh_CN": "首页",
+          "en_US": "Home"
+        },
+        "name": "首页"
+      },
+      {
+        "icon":"/images/icon/a2.png",
+        "activeIcon":"/images/icon/b2.png",
+        "pagePath": "pages/logs/logs",
+        "name_locale": {
+            "zh_CN": "首页",
+          "en_US": "Home"
+        },
+        "name": "日志"
+      }
+    ]
+  }
+}

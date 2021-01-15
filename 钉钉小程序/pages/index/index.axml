@@ -1,0 +1,92 @@
+<view>
+<son-zu chuanzhi="{{dataValues}}" onchanggett="onsonobhe" qq="{{sword}}">
+  <view>
+    大眼维克托
+  </view>
+  <view name="foot">
+    footer
+  </view>
+  <view name="header">
+   header 
+  </view>
+  <view slot-scope="opp">
+      ---++++----{{opp.nu}}
+  </view>
+</son-zu>
+ {{gu}}+
+  {{array[0].qw}}
+  <button type="primary" onTap="clic">
+  按钮
+  </button>
+  <view a:for="{{bi2}}" key="{{item}}" a:for-index="idx" a:for-item="item">
+    {{item}}---{{idx}}///////{{item}}
+  </view>
+  <button type="primary" onTap="tiao">
+  子页面
+  </button>
+  <view a:if="{{flage==1}}">
+    对的
+  </view>
+  <view a:elif="{{flage==2}}">
+    错愕
+  </view>
+  <view a:else>
+    另外
+  </view>
+  <button type="primary" onTap="falsss">
+  按钮1212
+  </button>
+  <button type="primary" onTap="falsss1">
+  按钮22222
+  </button>
+  <!-- 模板 -->
+  <template name="staffName">
+    <view>
+        FirstName: {{firstName}}, LastName: {{lastName}}
+    </view>
+  </template>
+  <template is="staffName" data="{{...staffA}}"></template>
+  <template is="staffName" data="{{...staffB}}"></template>
+  <button type="primary" onTap="conteClick">
+  加一按钮{{conte}}
+  </button>
+  <view id="item-{{gu}}">
+    群英会
+  </view>
+  <button type="primary" onTap="showHide">
+  显隐按钮
+  </button>
+  <view hidden="{{flag1 ? true : false}}">
+    显隐效果
+  </view>
+  <view>
+    1+3+6+6
+  </view>
+  <import src="../logs/logs.axml"/>
+  <template is="item" data="{{menus}}"/>
+  <include src="../include/include.axml"/>
+
+  <template name="qwe">
+    <view>
+      {{a1}}+{{a2}}+{{a3}}
+    </view>
+  </template>
+  <template is="qwe" data="{{...lop}}">
+  </template>
+  <text>奇数偶数</text>
+  <template name="odd">
+    <text>奇数</text>
+  </template>
+  <template name="even">
+    <text>偶数</text>
+  </template>
+  <view a:for="{{[1,2,3,4,5,6,7,8,9]}}">
+      <template is="{{item % 2==0 ? 'even' : 'odd'}}">
+  </template>
+  </view>
+  <import-sjs name="m1" from="./index.sjs"/>
+  <text>{{m1.app}}</text>
+  <text>
+  {{m1.gets(30)}}
+  </text>
+</view>

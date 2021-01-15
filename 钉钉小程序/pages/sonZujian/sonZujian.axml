@@ -1,0 +1,14 @@
+<view>
+  子组件位置
+  {{a1}}**------{{a2}}
+  <slot>
+    <view>default slot & default value</view>
+  </slot>
+  <slot name="foot"></slot>
+  {{qq}}
+  <slot name="header"></slot>
+  <slot nu="{{a1}}">
+    slot-scop
+  </slot>
+  //////////////--------------{{a1}}----------------------------///////////////
+</view>

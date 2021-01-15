@@ -1,0 +1,6 @@
+<template name="item">
+  <view a:for="{{menus}}" key="{{item}}">
+    <text>{{item.son}}+---------
+    +{{item.son1}}</text>
+  </view>
+</template>
