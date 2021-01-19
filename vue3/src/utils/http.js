@@ -33,10 +33,19 @@ function postTake(obj){
         data: obj,    
       })
 }
+
+function logons(obj){
+  return request({
+    url: '/login',      
+    method: 'post',
+    data: obj,    
+  })
+}
   export default{
     updateBook,
     getsendDate,
     postTake,
-    sends
+    sends,
+    logons
   }
 

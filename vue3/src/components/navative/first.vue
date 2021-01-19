@@ -27,6 +27,7 @@ export default {
       wacss: {
         obtL: "阿萨达多",
       },
+       value: true
     };
   },
   methods: {
@@ -39,7 +40,7 @@ export default {
       // 封装后的axios
       updatseBook.updateBook().then((res) => {
         console.log("封装", res);
-        sessionStorage.loginToken = res.token;
+        // sessionStorage.loginToken = res.token;
       });
 
       updatseBook.sends({ name: "奥术大师多" }).then((res) => {
