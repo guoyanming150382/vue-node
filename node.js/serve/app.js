@@ -37,7 +37,7 @@ app.get('/index',function(req,res){
 			]
 		}
 	]
-	res.json({code:200,msg:'success',data:data,token:"mobiwusizhiafh//asrfasf"});
+	res.json({code:200,msg:'success',data:data});
 })
 
 // get 传参数
@@ -72,5 +72,16 @@ app.post('/postTake',function(req,res){
 	]
 	res.send({code:200,msg:"post获取参数",data:datas})
 })
+
+app.post('/login',(req,res)=>{
+	if(req.body.name=='lisi' && req.body.passWord){
+		res.send({code:200,mess:'登陆成功',token:'asdasdadsasdd',roles:['admin']})
+	}else if(req.body.name=='taxi' && req.body.passWord){
+		res.send({code:200,mess:'登陆成功',token:'asdasdadsasdd',roles:['admin','vip']})
+	}else{
+		res.send({code:500,mess:'登录失败'})
+	}
+})
+
 app.listen(3333,'127.0.0.1')
 
