@@ -99,7 +99,7 @@ export default new Router({
         {   
             path:'/',
             redirect:"/nagivation/one",
-            roles:['admin']
+            roles:['admin','vip']
         },
         {
             path: '/nagivation',
@@ -107,7 +107,7 @@ export default new Router({
             name:'nagivation',
             meta: {
                 title: 'nagivation.vue页面',
-                roles:['admin']
+                roles:['admin','vip']
             },
             children:[
                 {
@@ -116,7 +116,7 @@ export default new Router({
                     component: () => import('../components/navative/second.vue'),
                     meta: {
                         title: 'wtwo页面',
-                        roles:['admin']
+                        roles:['admin','vip']
                     }
                 },
                 {
@@ -125,11 +125,7 @@ export default new Router({
                     component: () => import('../components/navative/first.vue'),
                     meta: {
                         title: 'wtwo页面',
-                        roles:['admin']
-                    },
-                    beforeEnter:(to,from,next)=>{
-                        console.log("独享守卫",to,from)
-                        next()
+                        roles:['admin','vip']
                     }
                 },
                 {
@@ -138,7 +134,7 @@ export default new Router({
                     component: () => import('../components/navative/thrd.vue'),
                     meta: {
                         title: 'wtwo页面',
-                        roles:['admin']
+                        roles:['admin','vip']
                     }
                 },
             ]
@@ -148,7 +144,7 @@ export default new Router({
                 component: () => import( /* webpackChunkName:"404" */ '../components/404.vue'),
                 meta: {
                     title: '404',
-                    roles:['admin']
+                    roles:['admin','vip']
                 }
         },
         {
@@ -156,38 +152,25 @@ export default new Router({
                 component: () => import( /* webpackChunkName: "404" */ '../components/routerJump.vue'),
                 meta: {
                     title: '路由相关知识',
-                    roles:['admin','vip']
+                    roles:['vip']
                 },
-                beforeEnter:(to,from,next)=>{
-                    console.log("权限修改",to)
-                    let role=JSON.parse(JSON.stringify(sessionStorage.roles)).split(',')
-                    if(to.meta.roles===role){
-                        next()
-                    }else{
-                        next(false)
-                    }
-                    
-                }
+                // beforeEnter:(to,from,next)=>{
+                //     console.log("权限修改",to)
+                //     let role=JSON.parse(JSON.stringify(sessionStorage.roles)).split(',')
+                //     if(to.meta.roles===role){
+                //         next()
+                //     }else{
+                //         next(false)
+                //     }
+                // }
         },
         {
             path: '/login',
                 component: () => import( /* webpackChunkName: "404" */ '../components/login.vue'),
                 meta: {
                     title: '登录',
-                    roles:['admin']
                 },
                 name:'login'
         }
-    ],
-    routes1:[
-                {
-                    path:'/dynamic',
-                    name:"dynamic",
-                    component:()=>import('../components/dynamic'),
-                    meta:{
-                        title:'动态页面',
-                        roles:['admin','vip']
-                    }
-                }
-            ]
+    ]
 });

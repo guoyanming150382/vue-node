@@ -15,12 +15,12 @@ Vue.config.productionTip = false
 // 路由全局导航  https://router.vuejs.org/zh/guide/advanced/navigation-guards.html
 // console.log("路----------------------------由",router)
 router.beforeEach((to,from,next)=>{
-  const role=sessionStorage.loginToken
+  const role =sessionStorage.roles
   console.log("当前路由to",to)
   console.log("from",from)
-
   if(role){
-    if(to.meta.roles.indexOf('admin')>1){
+    const roles=JSON.parse(JSON.stringify(sessionStorage.roles))
+    if(to.meta.roles.indexOf(roles)>-1){
       next()
     }
   }else{
