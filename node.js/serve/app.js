@@ -77,7 +77,7 @@ app.post('/login',(req,res)=>{
 	if(req.body.name=='lisi' && req.body.passWord){
 		res.send({code:200,mess:'登陆成功',token:'asdasdadsasdd',roles:['admin']})
 	}else if(req.body.name=='taxi' && req.body.passWord){
-		res.send({code:200,mess:'登陆成功',token:'asdasdadsasdd',roles:['admin','vip']})
+		res.send({code:200,mess:'登陆成功',token:'asdasdadsasdd',roles:['vip']})
 	}else{
 		res.send({code:500,mess:'登录失败'})
 	}
