@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+	let myStyles={
+		color:'#ff0',
+		fontSize:20,
+		background:'pink'
+	}
+	class App extends React.Component{
+		render(){
+			return(
+				<div>
+					<h1>{this.props.accs==1 ? '上' : '下'}</h1>
+					 {/*注释...*/}
+					<h2 style={myStyles}>{this.props.tian}</h2>
+				</div>
+			)
+		}
+	}
+
+	ReactDOM.render(
+		<App accs={10} tian={"天行健，君子以自强不息"}/>,
+		document.getElementById("example")
+	)
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+	class Cses extends React.Component{
+		render(){
+			return(
+				<div>
+					时间点：{this.props.menu}
+				</div>
+			)
+		}	
+	}
+
+	ReactDOM.render(
+		<Cses menu={98} />,
+		document.getElementById('example')
+	)
+</script>
+</html>

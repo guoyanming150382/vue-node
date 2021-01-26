@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		function Clocks(props){
+			return(
+				<div>
+					<h1>
+						时间：{props.date.toLocaleTimeString()}
+					</h1>
+					<h3>猜测是：{props.munes}</h3>
+				</div>
+			)
+		}
+		function timer(){
+			ReactDOM.render(
+				<Clocks date={new Date()} munes={89}/>,
+				document.getElementById("example")
+			)
+		}
+		setInterval(timer,1000)
+	</script>
+</body>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+		font-size: 20px;
+	}
+
+</style>
+</html>

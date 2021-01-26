@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+
+	class APP extends React.Component{
+		render(){
+			return(
+				<div>
+					<h1>{this.props.headss}--</h1>
+					<h2>-{this.props.bodyss}</h2>
+					<h3>/{this.props.footers}</h3>
+				</div>
+			)
+		}
+	}
+
+	ReactDOM.render(
+		<APP headss={"头"} bodyss={"身体"} footers={"尾部"}/>,
+		document.getElementById("example")
+	)
+</script>
+</html>

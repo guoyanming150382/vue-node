@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+	class App extends React.Component{
+		render(){
+			return(
+				<div>
+					<h1>示儿</h1>
+					<p>死去元知万事空</p>
+					<p>{this.props.hang}</p>
+					<p>{this.props.hang1}</p>
+					<p>{this.props.sunms+"告乃翁"}</p>
+				</div>
+			)
+		}
+	}
+
+	ReactDOM.render(
+		<App hang={"但悲不见九州同"} hang1={"王师北定中原日"} sunms={'家祭无忘'}/>,
+		document.getElementById("example")
+	)
+</script>
+</html>
