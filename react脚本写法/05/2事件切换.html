@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件渲染</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+    class App extends React.Component{
+        constructor(props){
+            super(props)
+            this.state={thimes:false}
+            console.log(super())
+        }
+
+        brnc=()=>{
+            this.setState(state=>({
+                thimes:!this.state.thimes
+            }))
+        }
+
+        render(){
+            console.log("第九届",this)
+            return(
+                <div>
+                    <button onClick={this.brnc}>点击</button>
+                    {this.state.thimes? "开" : "关闭"}
+                    <Ifirsts taitan={this.state.thimes}/>
+                    <Pasd bie={this.props.mier}/>
+                    <Serong />
+                </div>
+            )
+        }
+    }
+
+    class Ifirsts extends React.Component{
+        render(){
+            if(this.props.taitan){
+                return <div>登录</div>
+            }else{
+                return <div>登出</div>
+            }
+        }
+    }
+
+    function Pasd(props){
+        console.log("------",props)
+        return <div>{props.bie}</div>
+    }
+
+    class Serong extends React.Component{
+        constructor(props){
+            super(props)
+            this.state={
+                flag:false,
+                arrarys:[{ops:99},{opp:"阿萨达"}]
+            }
+        }
+
+        aful=()=>{
+            this.setState(state=>({
+                flag:!this.state.flag
+            }))
+        }
+        render(){
+            return (
+                <div>
+                    <button onClick={this.aful}>点击click</button>    
+                    {this.state.flag ? this.state.arrarys[0].ops : this.state.arrarys[1].opp}
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <App mier={"赫利俄斯"}/>,
+        document.getElementById("example")
+    )
+
+  
+</script>
+</html>

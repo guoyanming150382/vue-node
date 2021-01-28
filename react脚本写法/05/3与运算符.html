@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隐藏组件</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+    class App extends React.Component{
+        constructor(props){
+            super(props)
+            this.state={
+                flage:false
+            }
+        }
+
+        flasesd=()=>{
+            this.setState(state=>({
+                flage:!this.state.flage
+            }))
+        }
+
+        render(){
+            return(
+                <div>
+                    <button onClick={this.flasesd}>{this.state.flage? "显示" : "隐藏"}</button>
+                    <Son1 biaozh={this.state.flage}/>
+                </div>
+            )
+            
+        }
+    }
+    
+    class Son1 extends React.Component{
+        render(){
+            console.log(this.props)
+            if(this.props.biaozh){
+                return <div>显示</div>
+            }else{
+                return null
+            }
+        }
+    }
+
+   ReactDOM.render(
+       <App/>,
+       document.getElementById("example")
+   )
+</script>
+</html>

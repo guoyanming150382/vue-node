@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>条件渲染</title>
+	<title>map渲染</title>
 	<!-- 加载 React。-->
 	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
 	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
@@ -13,30 +13,26 @@
 	<div id="example"></div>
 </body>
 <script type="text/babel">
-    function App(props){
-            console.log("1",props)
-            if(props==false){
-                return <Son/>
-            }else {
-                return <Saa />
-            }
-    }
-
-    function Son(){
-        return(
-            <div>son</div>
-        )
-    }
-
-    function Saa(){
-        return(
-            <div>Saa</div>
-        )
-    }
-
-    ReactDOM.render(
-        <App offOn={false}/>,
-        document.getElementById("example")
+    const arrs=[1,2,3,4,5,6]
+    const pop=arrs.map((item,index)=>
+        <li key={index}>{item} index+++{index}</li>
     )
+   class App extends React.Component{
+        constructor(props){
+            super(props)
+        }
+        render(){
+            return(
+                <ul>
+                    {pop}
+                </ul>
+            )
+        }
+   }
+
+   ReactDOM.render(
+       <App/>,
+       document.getElementById("example")
+   )
 </script>
 </html>
