@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>propsType</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+   class App extends React.Component{
+        constructor(props){
+            super(props)
+            this.state={
+                qw:"哈士奇"
+            }
+        }
+
+        Prss(){
+            this.setState((state,props)=>({
+                qw:"金毛"+state.qw+props.poo
+            }))
+            console.log(this)
+        }
+
+        render(){
+            return(
+                <div>
+                    <button onClick={()=>this.Prss()}>点击</button>
+                    {this.state.qw}
+                </div>
+            )
+        }
+   }
+
+   ReactDOM.render(
+       <App poo={"阿加"}/>,
+       document.getElementById("example")
+   )
+</script>
+</html>

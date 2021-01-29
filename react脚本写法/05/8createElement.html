@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>propsType</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+    var ele=React.createElement(
+        'h3',
+        {className:'po'},
+        '比尔吉我特'
+    )
+   class App extends React.Component{
+        constructor(props){
+           super(props)
+        }
+        render(){
+            return(
+                <div>
+                    {ele}
+                </div>
+            )
+        }
+   }
+
+   ReactDOM.render(
+       <App/>,
+       document.getElementById("example")
+   )
+</script>
+</html>

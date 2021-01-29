@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>propsType</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+   class App extends React.Component{
+        constructor(props){
+            super(props)
+            this.state={
+                name:"",
+                old:"",
+                worsd:'',
+                selectValue:"",
+                isTRue:false
+            }
+        }
+
+        submitss(){
+            console.log(this.state)
+        }
+        oncanhe(){
+            this.setState((state,props)=>({
+                name: event.target.value
+            }))
+        }
+        oncanhe1(){
+            this.setState((state,props)=>({
+                old: event.target.value
+            }))
+        }
+        oncanhe2(){
+            this.setState((state,props)=>({
+                worsd:event.target.value
+            }))
+        }
+        oncanhe3(){
+            this.setState((state,props)=>({
+                selectValue:event.target.value
+            }))
+        }
+        oncanhe4(event){
+            this.setState((state,props)=>({
+                isTRue:event.target.value
+            }))
+            console.log(this.state.isTRue)
+        }
+        handleSubmit(event){
+            event.preventDefault();//组织form表单默认事件
+        }
+        render(){
+            return(
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                        姓名：<input type="text" value={this.state.name} onChange={()=>this.oncanhe()}/>
+                        年龄：<input type="text" value={this.state.old} onChange={()=>this.oncanhe1()}/>
+                        文档：<textarea value={this.state.worsd} onChange={()=>this.oncanhe2()}></textarea>
+                        select标签：<select value={this.state.selectValue} onChange={()=>this.oncanhe3()}>
+                                <option value="西瓜">西瓜</option>
+                                <option value="椰子">椰子</option>
+                                <option value="句子">橘子</option>
+                            </select>
+                            多选(获取选中check的功能未实现)：<input type="checkbox" checked={this.state.isTRue} onChange={()=>this.oncanhe4()}></input>
+                        <button onClick={()=>this.submitss()}>提交</button>
+                    </form>
+                </div>
+            )
+        }
+   }
+
+   ReactDOM.render(
+       <App/>,
+       document.getElementById("example")
+   )
+</script>
+</html>
