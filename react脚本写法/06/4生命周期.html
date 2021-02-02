@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生命周期</title>
+	<!-- 加载 React。-->
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script type="text/babel">
+   class App extends React.Component{
+        constructor(props){
+            super(props)
+            this.state={opa:"阿萨达",mu:"asdasd"}
+            console.log(super())
+        }
+        dian(){
+            this.setState((state,props)=>({
+                opa:"提尔",
+                mu:"1231313213"
+            }))
+            this.forceUpdate();
+        }
+        componentWillMount(){
+            console.log("componentWillMount ")
+        }
+        componentDidMount(){
+            console.log("componentDidMount ")
+        }
+        componentWillReceiveProps (){//此周期触发问题未解决
+            console.log("componentWillReceiveProps ")
+        }
+        shouldComponentUpdate(){
+            console.log("shouldComponentUpdate  ")
+        }
+        componentWillUpdate(){
+            console.log("componentWillUpdate ")
+        }
+        componentDidUpdate(){
+            console.log("componentDidUpdate  ")
+        }
+        componentWillUnmount(){
+            console.log("componentWillUnmount")
+        }
+        render(){
+            return(
+                <div>
+                    <p>{this.state.opa}+{this.props.namess}</p>
+                    <button onClick={()=>this.dian()}>点击</button>
+                    <Yaa cvc={this.state.mu}/>
+                </div>
+            )
+        }
+   }
+
+   class Yaa extends React.Component{
+       constructor(props){
+           super(props)
+           console.log("-------------------------",this.props.cvc)
+       }
+
+       render(){
+        if(this.props.cvc=="asdasd"){
+                   return null
+                }else{
+                    return(
+                        <div>
+                            544655454
+                        </div>
+                    )
+                }
+           
+       }
+   }
+
+   ReactDOM.render(
+       <App namess={"洛基"}/>,
+       document.getElementById("example")
+   )
+</script>
+</html>
