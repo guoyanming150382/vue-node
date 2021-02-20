@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		for(var i=0;i<5;i++){
+			var btn =document.createElement("button");
+			btn.appendChild(document.createTextNode("按钮"+i));
+			btn.addEventListener('click',function(){console.log(i)})
+			document.body.appendChild(btn)
+		}
+		// 输出i都为5
+	</script>
+</body>
+</html>
