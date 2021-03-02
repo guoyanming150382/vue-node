@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function A(){
+			console.log("a")
+		}
+
+		function B(){
+			console.log("a")
+		}
+
+		async function vv(){
+			try{
+				const resyaiu= await this.A()
+				resyaiu=await this.B()
+			}
+		}
+		this.vv()
+	</script>
+</body>
+</html>

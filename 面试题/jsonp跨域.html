@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let script=document.createElement('script');
+		script.type = 'text/javascript';
+		script.src='http://127.0.0.1:3333/postJson?user=asda&callback=handCallback';
+		function handCallback(res){
+			console.log(JSON.stringify(res))
+		}
+	</script>
+</body>
+</html>

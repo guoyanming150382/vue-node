@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="">dianji</button>
+	<script type="text/javascript">
+		// call、apply与bind区别：前两个可以自动执行，bind不会自动执行，需要手动调用
+
+		// call、bind与apply区别：前两个都有无数个参数，apply只有两个参数，而且第二个参数为数组
+		// 1.call
+		function fn(a,b,c){
+			console.log(this,a,b,c)//指向window
+		}
+		fn()
+		fn.call(document,1,2,3)
+
+		// 2.apply()
+		function fn1(a,b,c){
+			console.log("fn1",this,a,b,c)//指向window
+		}
+		fn1()
+		fn1.apply(document,[2,3,5])
+		// 3.bind()
+		function fn2(a,b,c){
+			console.log("fn2",this,a,b,c)//指向window
+		}
+		fn2()
+		fn2.bind(document)(1,6,33)
+	</script>
+</body>
+</html>
