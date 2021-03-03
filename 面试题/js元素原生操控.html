@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="fnu()">点击</button>
+	<button onclick="fnu1()">点击2</button>
+	<script>
+		let a=document.createElement("div")
+		let b=document.createTextNode("内容")
+		a.appendChild(b)
+		document.body.appendChild(a)
+
+		function fnu(){
+			document.body.removeChild(a)
+		}
+
+		function fnu1(){
+			a.innerHTML="改变啊啊啊啊"
+		}
+
+		const m=69
+		m=45
+		console.log("const",m)
+	</script>
+</body>
+</html>
